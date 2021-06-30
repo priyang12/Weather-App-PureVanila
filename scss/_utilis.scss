@@ -1,0 +1,76 @@
+* {
+  margin: 0rem;
+  padding: 0rem;
+}
+body {
+  background: $background;
+  background-color: $secondarycolor;
+  color: $secondarycolor;
+  height: 100vh;
+  font-family: $fontstack;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+.container {
+  margin: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: relative;
+  margin: 2rem;
+
+  .stick {
+    width: 1px;
+    margin: 0 auto;
+    height: 5rem;
+    border: 2px solid $secondarycolor;
+    background-color: $secondarycolor;
+    transition: 1s linear;
+  }
+  select {
+    font-size: larger;
+    padding: 1rem 3rem;
+    width: 20rem;
+  }
+  input {
+    padding: 0.5rem;
+  }
+  label {
+    align-self: center;
+    color: black;
+    font-size: 3em;
+  }
+}
+// Buttons
+%btn-shared {
+  padding: 2rem;
+  transition: all 0.5s;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  border: none;
+  &-light {
+    @extend %btn-shared;
+    color: #333;
+    background-color: $secondarycolor;
+  }
+
+  &-dark {
+    @extend %btn-shared;
+    color: #f4f4f4;
+    background-color: $primarycolor;
+  }
+}
+
+button[class^='btn-']:hover,
+input[class^='btn-']:hover {
+  background-color: transparent;
+}

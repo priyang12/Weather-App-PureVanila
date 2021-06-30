@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h1>Weather</h1>
+      </div>
+      <div class="cloud">
+        <img src="image/PNGIX.com_white-cloud-png_836846.png" alt="Cloud" />
+      </div>
+    </nav>
+    <section id="main">
+      <div class="container">
+        <h1 class="display" id="Weather_status"></h1>
+        <h2 id="description">Weather description :</h2>
+        <ul class="list" id="details">
+          <li>Temp :</li>
+          <li>Temp feels_like :</li>
+          <li>Pressure :</li>
+          <li>Humidity :</li>
+          <li>Sea level :</li>
+        </ul>
+        <h2 id="visibility">visibility :</h2>
+        <h2>Wind</h2>
+        <ul class="list" id="wind">
+          <li>Speed :</li>
+          <li>Deg :</li>
+          <li>Gust :</li>
+        </ul>
+      </div>
+    </section>
+    <section id="search">
+      <div class="wetherinput">
+        <form id="SearchCountry">
+          <select name="country" id="country" onchange="changeCountry(this)">
+            <option value="india">Select Country</option>
+          </select>
+          <div class="stick"></div>
+          <select name="state" id="state" onchange="changeState(this)">
+            <option value="india">Select State</option>
+          </select>
+          <div class="stick"></div>
+          <select name="city" id="city" onchange="changeCity(this)">
+            <option value="india">Select City</option>
+          </select>
+        </form>
+        <button id="getWeather" class="btn-dark">Get Weather</button>
+      </div>
+      <div class="border"></div>
+      <div class="wetherinput">
+        <form id="searchWeather">
+          <div class="form-control">
+            <input type="text" />
+            <label for="City">Enter City</label>
+          </div>
+          <input type="submit" class="btn-light" value="Get Weather" />
+        </form>
+      </div>
+    </section>
+  </body>
+  <script src="script/KEYS.json"></script>
+  <script src="script/API.js"></script>
+  <script src="script/UI.js"></script>
+  <script src="script/app.js"></script>
+</html>

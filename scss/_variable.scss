@@ -1,0 +1,16 @@
+$background: linear-gradient(0deg, #f4f8fb 10%, #1869e2 20%, #39afea 95%)
+  no-repeat center center/cover;
+$secondbackground: linear-gradient(0deg, #1869e2 10%, #f4f8fb 75%) no-repeat
+  center center/cover;
+$primarycolor: #1869e2;
+$secondarycolor: #f4f8fb;
+$fontstack: 'Lato', sans-serif;
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
