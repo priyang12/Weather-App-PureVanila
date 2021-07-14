@@ -42,10 +42,10 @@ form select {
 }
 form input {
   padding: 0.5rem;
+  font-size: medium;
 }
 form label {
   align-self: center;
-  color: black;
   font-size: 3em;
 }
 
@@ -76,7 +76,7 @@ input[class^=btn-]:hover {
 
 @keyframes move {
   to {
-    margin-left: 0%;
+    margin-left: 20%;
   }
   from {
     margin-left: 70%;
@@ -163,10 +163,79 @@ nav img {
 }
 #search .wetherinput #searchWeather {
   display: flex;
+  color: black;
 }
 #search .wetherinput #searchWeather .form-control {
   display: flex;
   margin-bottom: 4.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .btn-light {
+    margin: 2rem;
+  }
+
+  form .stick {
+    border: 2px solid #1869e2;
+    background-color: #1869e2;
+  }
+
+  form select {
+    width: 10rem;
+    padding: 0.5rem;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+  nav .cloud {
+    display: none;
+    animation: none;
+  }
+
+  #main .container {
+    margin: 1rem;
+  }
+  #main .container .display {
+    font-size: 2rem;
+  }
+  #main .container #description {
+    font-size: large;
+  }
+  #main .container h2,
+#main .container h4,
+#main .container .list,
+#main .container .wind {
+    margin: 0.5rem 0rem;
+  }
+  #main .container h2 li,
+#main .container h4 li,
+#main .container .list li,
+#main .container .wind li {
+    margin: 1rem;
+  }
+
+  #search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #search #getWeather {
+    margin: 2rem;
+  }
+  #search .wetherinput {
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 1px solid #f4f8fb;
+  }
+  #search .wetherinput #searchWeather {
+    margin: 1rem;
+  }
+  #search .wetherinput #searchWeather .form-control {
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

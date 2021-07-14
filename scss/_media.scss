@@ -1,0 +1,64 @@
+@media only screen and (max-width: 600px) {
+  .btn-light {
+    margin: 2rem;
+  }
+
+  form {
+    .stick {
+      border: 2px solid $primarycolor;
+      background-color: $primarycolor;
+    }
+  }
+  form select {
+    width: 10rem;
+    padding: 0.5rem;
+  }
+  nav {
+    padding: 1rem;
+    .cloud {
+      display: none;
+      animation: none;
+    }
+  }
+  #main {
+    .container {
+      margin: 1rem;
+      .display {
+        font-size: 2rem;
+      }
+      #description {
+        font-size: large;
+      }
+      h2,
+      h4,
+      .list,
+      .wind {
+        margin: 0.5rem 0rem;
+        li {
+          margin: 1rem;
+        }
+      }
+    }
+  }
+  #search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    #getWeather {
+      margin: 2rem;
+    }
+    .wetherinput {
+      display: inline-block;
+      padding: 1rem;
+      margin: 1rem auto;
+      border: 1px solid $secondarycolor;
+      #searchWeather {
+        margin: 1rem;
+        .form-control {
+          flex-direction: column;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

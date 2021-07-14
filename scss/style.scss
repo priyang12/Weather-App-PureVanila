@@ -84,6 +84,7 @@ nav {
     margin: 0 auto;
     #searchWeather {
       display: flex;
+      color: black;
       .form-control {
         display: flex;
         margin-bottom: 4.5rem;
@@ -91,3 +92,4 @@ nav {
     }
   }
 }
+@import 'media';

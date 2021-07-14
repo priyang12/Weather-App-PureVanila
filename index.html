@@ -21,26 +21,28 @@
         <img src="image/PNGIX.com_white-cloud-png_836846.png" alt="Cloud" />
       </div>
     </nav>
+
     <section id="main">
       <div class="container">
         <h1 class="display" id="Weather_status"></h1>
-        <h2 id="description">Weather description :</h2>
+        <h2 id="description"></h2>
         <ul class="list" id="details">
-          <li>Temp :</li>
-          <li>Temp feels_like :</li>
-          <li>Pressure :</li>
-          <li>Humidity :</li>
-          <li>Sea level :</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
-        <h2 id="visibility">visibility :</h2>
-        <h2>Wind</h2>
+        <h2 id="visibility"></h2>
+        <h2></h2>
         <ul class="list" id="wind">
-          <li>Speed :</li>
-          <li>Deg :</li>
-          <li>Gust :</li>
+          <li></li>
+          <li</li>
+          <li></li>
         </ul>
       </div>
     </section>
+    <div id="Spinner"></div>
     <section id="search">
       <div class="wetherinput">
         <form id="SearchCountry">
@@ -56,13 +58,13 @@
             <option value="india">Select City</option>
           </select>
         </form>
-        <button id="getWeather" class="btn-dark">Get Weather</button>
+        <button id="getWeather" class="btn-dark" disabled>Get Weather</button>
       </div>
       <div class="border"></div>
       <div class="wetherinput">
         <form id="searchWeather">
           <div class="form-control">
-            <input type="text" />
+            <input type="text" id="searchCity"/>
             <label for="City">Enter City</label>
           </div>
           <input type="submit" class="btn-light" value="Get Weather" />
@@ -70,7 +72,6 @@
       </div>
     </section>
   </body>
-  <script src="script/KEYS.json"></script>
   <script src="script/API.js"></script>
   <script src="script/UI.js"></script>
   <script src="script/app.js"></script>

@@ -4,7 +4,7 @@ class API {
       `https://api.countrystatecity.in/v1/countries`,
       {
         headers: {
-          'X-CSCAPI-KEY': `countrykey`,
+          'X-CSCAPI-KEY': ``,
         },
       }
     );
@@ -20,7 +20,7 @@ class API {
       `https://api.countrystatecity.in/v1/countries/${country}/states`,
       {
         headers: {
-          'X-CSCAPI-KEY': `countrykey`,
+          'X-CSCAPI-KEY': `CountrylistAPIKey`,
         },
       }
     );
@@ -34,7 +34,7 @@ class API {
       `https://api.countrystatecity.in/v1/countries/${country}/states/${state}/cities`,
       {
         headers: {
-          'X-CSCAPI-KEY': `countrykey`,
+          'X-CSCAPI-KEY': `CountrylistAPIKey`,
         },
       }
     );
@@ -47,7 +47,7 @@ class API {
   async getWeater(country, state, city) {
     console.log(country, state, city);
     const City = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=weatherKey`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=weatherAPI`
     );
     const weather_data = await City.json();
     function getdata() {
@@ -56,8 +56,18 @@ class API {
     return { getdata };
   }
   async getcurrentWeather(lat, lon) {
-    const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=weatherKey
+    const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=weatherAPI
     `);
+    const weather_data = await weather.json();
+    function getdata() {
+      return weather_data;
+    }
+    return { getdata };
+  }
+  async getCityWeather(city) {
+    const weather = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=weatherAPI`
+    );
     const weather_data = await weather.json();
     function getdata() {
       return weather_data;

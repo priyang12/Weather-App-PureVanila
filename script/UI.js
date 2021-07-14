@@ -1,3 +1,6 @@
+const clearElement = (element) => {
+  element.innerHTML = '';
+};
 class UI {
   constructor() {
     this.country = document.getElementById('country');
@@ -42,19 +45,45 @@ class UI {
     // this.state.style = "none";
     // this.city.style = "none";
   }
+  clearStates() {
+    console.log('here');
+    clearElement(this.weather);
+    clearElement(this.description);
+    clearElement(this.details[0]);
+    clearElement(this.details[1]);
+    clearElement(this.details[2]);
+    clearElement(this.details[3]);
+    clearElement(this.details[4]);
+    clearElement(this.visibility);
+    clearElement(this.wind[0]);
+    clearElement(this.wind[1]);
+  }
+
   showWeather(data) {
+    console.log(data);
     this.weather.append(data.name + ' | ' + data.weather[0]?.main);
-    this.description.append(' ' + data.weather[0]?.description.toUpperCase());
-    this.description;
-    this.details[0].append(data.main?.temp);
-    this.details[1].append(data.main?.feels_like);
-    this.details[2].append(data.main?.pressure);
-    this.details[3].append(data.main?.humidity);
-    this.details[4].append(data.main?.sea_level);
-    this.visibility.append(data?.visibility);
-    this.wind[0].append(data.wind?.speed);
-    this.wind[1].append(data.wind?.deg);
-    this.wind[2].append(data.wind?.gust);
+    this.description.append(
+      'Weather description : ' + data.weather[0]?.description.toUpperCase()
+    );
+    this.details[0].append('Temp :' + (data.main?.temp || 'Not available'));
+    this.details[1].append(
+      'feels_like :' + (data.main?.feels_like || 'Not available')
+    );
+    this.details[2].append(
+      'Pressure :' + (data.main?.pressure || 'Not available')
+    );
+    this.details[3].append(
+      'Humidity :' + (data.main?.humidity || 'Not available')
+    );
+    this.details[4].append(
+      'Sea level  :' + (data.main.sea_level || 'Not available')
+    );
+    this.visibility.append(
+      'Visibility :' + (data?.visibility || 'Not available')
+    );
+    this.wind[0].append('Speed :' + data.wind?.speed);
+    this.wind[1].append('Degree :' + data.wind?.deg);
+    // this.wind[2].append('Gust : ' + data.wind?.gust);
     const span = document.createElement('span');
     span.innerHTML = ' &#8451;';
     this.wind[1].appendChild(span);
