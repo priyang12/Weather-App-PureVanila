@@ -2,7 +2,12 @@
   .btn-light {
     margin: 2rem;
   }
-
+  #loader {
+    width: 100%;
+    img {
+      width: 80%;
+    }
+  }
   form {
     .stick {
       border: 2px solid $primarycolor;
@@ -20,12 +25,17 @@
       animation: none;
     }
   }
+  #Alertbtn {
+    margin: 0rem 8rem;
+  }
+
   #main {
     .container {
       margin: 1rem;
       .display {
         font-size: 2rem;
       }
+
       #description {
         font-size: large;
       }
@@ -40,6 +50,7 @@
       }
     }
   }
+
   #search {
     display: flex;
     flex-direction: column;
@@ -55,6 +66,7 @@
       #searchWeather {
         margin: 1rem;
         .form-control {
+          color: aliceblue;
           flex-direction: column;
           margin-bottom: 0.5rem;
         }

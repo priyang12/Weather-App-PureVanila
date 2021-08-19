@@ -1,8 +1,17 @@
+'use strict';
 const clearElement = (element) => {
   element.innerHTML = '';
 };
 class UI {
+  #WeaterDisplay;
+  #spinner;
+  #Alert;
+  #Alertmsg;
   constructor() {
+    this.#WeaterDisplay = document.getElementById('main');
+    this.#spinner = document.getElementById('loader');
+    this.#Alert = document.getElementById('alert');
+    this.#Alertmsg = document.getElementById('alertmsg');
     this.country = document.getElementById('country');
     this.state = document.getElementById('state');
     this.city = document.getElementById('city');
@@ -12,26 +21,53 @@ class UI {
     this.visibility = document.getElementById('visibility');
     this.wind = document.getElementById('wind').querySelectorAll('li');
   }
-  ShowCountry(countries) {
+  showLoader() {
+    this.#spinner.style.display = 'block';
+    this.#WeaterDisplay.style.display = 'none';
+  }
+  HideLoader() {
+    this.#spinner.style.display = 'none';
+    this.#WeaterDisplay.style.display = 'block';
+  }
+  showAlert(city) {
+    this.#Alertmsg.innerHTML = `Unfortunately 😕 ${city} is Wrong City Name.`;
+    this.#Alert.style.display = 'inline';
+  }
+  hideAlert() {
+    this.#Alert.style.display = 'none';
+  }
+  clearStates() {
+    clearElement(this.weather);
+    clearElement(this.description);
+    clearElement(this.details[0]);
+    clearElement(this.details[1]);
+    clearElement(this.details[2]);
+    clearElement(this.details[3]);
+    clearElement(this.details[4]);
+    clearElement(this.visibility);
+    clearElement(this.wind[0]);
+    clearElement(this.wind[1]);
+  }
+
+  ShowCountry(CountryList) {
     let html = `<option valur="null"> Select Country</option>`;
-    countries.CountryList.map((country) => {
+    CountryList.map((country) => {
       html = html + `<option value="${country.iso2}">${country.name}</option>`;
     });
     this.country.innerHTML = html;
   }
-  ShowState(states) {
+  ShowState(StateList) {
+    console.log(StateList);
     let html = '';
-
-    states.StateList.map((state) => {
+    StateList.map((state) => {
       html = html + `<option value="${state.iso2}">${state.name}</option>`;
     });
     this.state.innerHTML = html;
     this.state.style = 'block';
   }
-  ShowCity(city) {
+  ShowCity(CityList) {
     let html = '';
-    console.log(city);
-    city.CityList.map((state) => {
+    CityList.map((state) => {
       html = html + `<option value="${state.name}">${state.name}</option>`;
     });
     this.city.innerHTML = html;
@@ -45,22 +81,8 @@ class UI {
     // this.state.style = "none";
     // this.city.style = "none";
   }
-  clearStates() {
-    console.log('here');
-    clearElement(this.weather);
-    clearElement(this.description);
-    clearElement(this.details[0]);
-    clearElement(this.details[1]);
-    clearElement(this.details[2]);
-    clearElement(this.details[3]);
-    clearElement(this.details[4]);
-    clearElement(this.visibility);
-    clearElement(this.wind[0]);
-    clearElement(this.wind[1]);
-  }
 
   showWeather(data) {
-    console.log(data);
     this.weather.append(data.name + ' | ' + data.weather[0]?.main);
     this.description.append(
       'Weather description : ' + data.weather[0]?.description.toUpperCase()
@@ -88,4 +110,5 @@ class UI {
     span.innerHTML = ' &#8451;';
     this.wind[1].appendChild(span);
   }
+  showError(err) {}
 }

@@ -54,7 +54,33 @@ form {
   border: none;
   cursor: pointer;
 }
-
+#loader {
+  display: none;
+  text-align: center;
+}
+#alert {
+  display: none;
+  flex-direction: column;
+  top: 0rem;
+  left: 0%;
+  margin: 0rem 2rem;
+  padding: 2rem;
+  font-size: 30px;
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+}
+#Alertbtn {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: $secondarycolor;
+  border: 1px dotted $secondarycolor;
+  margin: 0rem 45%;
+}
+#Alertbtn:hover {
+  background-color: $secondarycolor;
+  color: $primarycolor;
+}
 .btn {
   border: none;
   &-light {

@@ -57,6 +57,37 @@ form label {
   cursor: pointer;
 }
 
+#loader {
+  display: none;
+  text-align: center;
+}
+
+#alert {
+  display: none;
+  flex-direction: column;
+  top: 0rem;
+  left: 0%;
+  margin: 0rem 2rem;
+  padding: 2rem;
+  font-size: 30px;
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#Alertbtn {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #f4f8fb;
+  border: 1px dotted #f4f8fb;
+  margin: 0rem 45%;
+}
+
+#Alertbtn:hover {
+  background-color: #f4f8fb;
+  color: #1869e2;
+}
+
 .btn {
   border: none;
 }
@@ -76,10 +107,10 @@ input[class^=btn-]:hover {
 
 @keyframes move {
   to {
-    margin-left: 20%;
+    margin-left: 0%;
   }
   from {
-    margin-left: 70%;
+    margin-left: 65%;
   }
 }
 nav {
@@ -175,6 +206,13 @@ nav img {
     margin: 2rem;
   }
 
+  #loader {
+    width: 100%;
+  }
+  #loader img {
+    width: 80%;
+  }
+
   form .stick {
     border: 2px solid #1869e2;
     background-color: #1869e2;
@@ -191,6 +229,10 @@ nav img {
   nav .cloud {
     display: none;
     animation: none;
+  }
+
+  #Alertbtn {
+    margin: 0rem 8rem;
   }
 
   #main .container {
@@ -233,6 +275,7 @@ nav img {
     margin: 1rem;
   }
   #search .wetherinput #searchWeather .form-control {
+    color: aliceblue;
     flex-direction: column;
     margin-bottom: 0.5rem;
   }
