@@ -64,7 +64,7 @@ btn.addEventListener('click', (e) => {
   ui.hideAlert();
   if (query.matches) {
     window.scroll({
-      top: 10,
+      top: 0,
       behavior: 'smooth',
     });
   }
