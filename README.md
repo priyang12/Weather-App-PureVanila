@@ -13,3 +13,5 @@ const keys = {
 };
 
 ```
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f3d8bbb4-088f-4426-a1a5-da2162277378/deploy-status)](https://app.netlify.com/sites/weather-app-priyang/deploys)
