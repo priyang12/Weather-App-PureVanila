@@ -19,10 +19,7 @@ function geoFindMe() {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const data = api.getcurrentWeather(latitude, longitude);
-    data.then((weather) => {
-      console.log(weather);
-      ui.showWeather(weather);
-    });
+    data.then((weather) => ui.showWeather(weather));
   }
   function error() {
     console.log('Unable to retrieve your location');

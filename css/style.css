@@ -124,6 +124,9 @@ nav .logo {
   margin: 0rem 2rem;
   font-size: 2rem;
 }
+nav .logo h1 {
+  font-weight: 300;
+}
 nav .cloud {
   margin-left: 70%;
   animation: 5s move alternate-reverse infinite linear;

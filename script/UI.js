@@ -103,13 +103,12 @@ class UI {
     this.visibility.append(
       'Visibility :' + (data?.visibility || 'Not available')
     );
-
     this.wind[0].append('Speed :' + data.wind?.speed);
     this.wind[1].append('Degree :' + data.wind?.deg);
-    // this.wind[2].append('Gust : ' + data.wind?.gust);
     const span = document.createElement('span');
     span.innerHTML = ' &#8451;';
     this.wind[1].appendChild(span);
+    this.wind[2].append('Gust : ' + (data.wind.gust || 'Not Available'));
   }
   showError(err) {}
 }
