@@ -142,7 +142,7 @@ nav img {
   color: #f4f8fb;
   height: 100%;
   padding: 2em;
-  background: url("../image/mike-kotsch-HNx4QLRgy2k-unsplash.jpg") no-repeat center center/cover;
+  background: url("/image/background.jpg") no-repeat center center/cover;
   z-index: 1;
 }
 #main .container .display {
